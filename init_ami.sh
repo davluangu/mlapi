@@ -3,8 +3,8 @@
 curl -sSL https://get.docker.com/ | sh
 sudo usermod -aG docker ubuntu # Remember that you will have to log out and back in for this to take effect!
 
-docker pull continuumio/miniconda3
-docker run -i -t continuumio/miniconda3 /bin/bash
+docker pull davluangu/mlapi
+docker run -i -t davluangu/mlapi /bin/bash
 
 conda update conda -y
 conda create --name mlapp flask -y
