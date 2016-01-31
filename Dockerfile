@@ -1,10 +1,24 @@
-FROM continuumio/miniconda3
+FROM nginx
 
-RUN apt-get update && \
-	apt-get -y --force-yes install nginx supervisor
+# Force bash always
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-RUN conda install --yes gunicorn flask
+RUN apt-get update && apt-get install -y \
+    curl \
+    bzip2 \
+    vim \
+    supervisor
 
-COPY app .
 EXPOSE 80
-CMD supervisord -c /supervisord.conf -n
+
+ENV CONDA_INSTALLER="Miniconda3-latest-Linux-x86_64.sh"
+ENV PATH=/miniconda/bin:$PATH
+
+RUN curl -O http://repo.continuum.io/miniconda/${CONDA_INSTALLER}
+RUN bash ${CONDA_INSTALLER} -b -p /miniconda
+RUN rm ${CONDA_INSTALLER}
+
+RUN conda update conda
+RUN conda install flask gunicorn
+
+COPY app /app
