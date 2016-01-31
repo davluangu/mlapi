@@ -1,7 +1,7 @@
-# [WIP] Machine Learning API
+# Machine Learning API
 The goal of this project is to productionize Python predictive models as dockerized REST microservices. I am currently exploring this project from the top of the stack going downward simply because that is where I am currently getting the most return on learnings per unit time.
 
-#### Status
+#### Status: WIP
 This is my tinkering around with various technologies. Until I remove the WIP and start tagging commits, everything is probably broken.
 
 #### Planned stack:
