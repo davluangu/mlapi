@@ -32,3 +32,10 @@ docker run -it --name mlapi_interact -p 80:80 mlapi-nginx /bin/bash
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
+
+###### References:
+- [http://docs.gunicorn.org/en/stable/deploy.html](http://docs.gunicorn.org/en/stable/deploy.html)
+- [https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/](https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/)
+- [http://supervisord.org/configuration.html](http://supervisord.org/configuration.html)
+- [https://github.com/danriti/nginx-gunicorn-flask](https://github.com/danriti/nginx-gunicorn-flask)
+
