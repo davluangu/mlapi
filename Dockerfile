@@ -21,4 +21,8 @@ RUN rm ${CONDA_INSTALLER}
 RUN conda update conda
 RUN conda install flask gunicorn
 
-COPY app /app
+COPY app /var/www/html
+COPY supervisord.conf /etc/supervisor/supervisord.conf
+
+RUN rm /etc/nginx/conf.d/*
+COPY nginx.conf /etc/nginx/nginx.conf
