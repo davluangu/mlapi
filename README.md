@@ -22,7 +22,7 @@ I decided to start from the official nginx docker image because nginx is at the 
 ```bash
 docker build -t mlapi-nginx .
 ```
-##### Run the docker images:
+##### Run the docker image:
 ```bash
 docker run -it --name mlapi_interact -p 80:80 mlapi-nginx /bin/bash
 ```
