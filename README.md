@@ -1,13 +1,12 @@
 # [WIP] Machine Learning API
-#### Goal
-Produce productionizable Python predictive models as dockerized REST APIs. I am currently exploring this project from the top of the stack going downward simply because that is where I am currently getting the most return on learnings per unit time.
+The goal of this project is to productionize Python predictive models as dockerized REST microservices. I am currently exploring this project from the top of the stack going downward simply because that is where I am currently getting the most return on learnings per unit time.
 
 #### Status
 This is my tinkering around with various technologies. Until I remove the WIP and start tagging commits, everything is probably broken.
 
 #### Planned stack:
 - Docker 
-- [nginx](https://hub.docker.com/_/nginx/) (this is based on a ~100mb Debian image) 
+- [nginx](https://hub.docker.com/_/nginx/) (based on a ~135mb Debian image) 
 - gunicorn
 - supervisor
 - [conda](http://conda.pydata.org/docs/intro.html)
@@ -17,12 +16,14 @@ This is my tinkering around with various technologies. Until I remove the WIP an
 - Seaborn (data visualization)
 
 ### Docker notes:
-#####From the repo's root directory:
+I decided to start from the official nginx docker image because nginx is at the top of my stack (I'm not sure if that is a good reason). 
+
+##### Build the docker image:
 ```bash
 docker build -t --name mlapi-nginx .
 ```
 
-#####Stop and remove all docker images:
+##### Stop and remove all docker images:
 ```bash
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
