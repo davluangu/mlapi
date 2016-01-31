@@ -20,7 +20,7 @@ I decided to start from the official nginx docker image because nginx is at the 
 
 ##### Build the docker image:
 ```bash
-docker build -t --name mlapi-nginx .
+docker build -t mlapi-nginx .
 ```
 
 ##### Stop and remove all docker images:
