@@ -35,4 +35,4 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx_flask.conf /etc/nginx/conf.d/nginx_flask.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-CMD ["/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
+CMD ["/usr/bin/supervisord --configuration=/etc/supervisor/supervisord.conf"]
