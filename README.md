@@ -24,7 +24,8 @@ docker build -t mlapi-nginx .
 ```
 ##### Run the docker image:
 ```bash
-docker run -it --name mlapi_interact -p 80:80 mlapi-nginx /bin/bash
+docker run -it -p 80:8000 --name mlapi_interact mlapi-nginx /bin/bash
+docker run -it -p 80:8000 --name mlapi_deploy mlapi-nginx
 ```
 
 ##### Stop and remove all docker images:
