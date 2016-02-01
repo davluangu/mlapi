@@ -27,10 +27,11 @@ RUN conda install flask gunicorn
 COPY app /var/www/html
 
 # copy supervisor configuration
-COPY supervisord.conf /etc/supervisor/supervisord.conf
+COPY mlapi.conf /etc/supervisor/conf.d/mlapi.conf
 
 # copy nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
 COPY flask.conf /etc/nginx/conf.d/flask.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
+CMD ["/usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf"]
