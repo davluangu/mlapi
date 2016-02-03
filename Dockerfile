@@ -28,7 +28,6 @@ COPY app /var/www/html
 
 # copy supervisor configuration
 COPY supervisord.conf /etc/supervisor/supervisord.conf
-#COPY mlapi.conf /etc/supervisor/conf.d/mlapi.conf
 
 # copy nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
