@@ -21,7 +21,8 @@ RUN rm ${CONDA_INSTALLER}
 
 # install python packages into root conda environment
 RUN conda update conda
-RUN conda install flask gunicorn
+RUN conda install flask gunicorn boto3
+RUN conda install -c https://conda.anaconda.org/akode xgboost
 
 # copy flask app
 COPY app /var/www/html
