@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     bzip2 \
     vim \
+    git \
+    build-essential \
     supervisor
 
 EXPOSE 80
@@ -21,8 +23,11 @@ RUN rm ${CONDA_INSTALLER}
 
 # install python packages into root conda environment
 RUN conda update conda
-RUN conda install flask gunicorn boto3
-RUN conda install -c https://conda.anaconda.org/akode xgboost
+RUN conda install flask gunicorn boto3 ipython pandas
+
+# install xgboost
+RUN git clone --recursive https://github.com/dmlc/xgboost
+RUN cd xgboost; make -j4
 
 # copy flask app
 COPY app /var/www/html
