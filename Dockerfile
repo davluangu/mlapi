@@ -22,8 +22,8 @@ RUN bash ${CONDA_INSTALLER} -b -p /miniconda
 RUN rm ${CONDA_INSTALLER}
 
 # install python packages into root conda environment
-RUN conda update conda
-RUN conda install flask gunicorn boto3 ipython pandas
+RUN conda update -y conda
+RUN conda install -y flask gunicorn boto3 ipython pandas
 
 # install xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost
