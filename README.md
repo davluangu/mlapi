@@ -1,5 +1,5 @@
-# Machine Learning API
-The goal of this project is to productionize Python predictive models as dockerized REST microservices. I am currently exploring this project from the top of the stack going downward simply because that is where I am currently getting the most return on learnings per unit time.
+# Data transformation containers
+The goal of this project is to productionize Python data transformations as dockerized REST microservices. The data transformations within each container can be anything from data munging to unsupervised/supervised machine learning models/ensemblers. I am currently exploring this project from the top of the stack going downward simply because that is where I am currently getting the most return on learnings per unit time.
 
 #### Status: WIP
 This is my tinkering around with various technologies. Until I remove the WIP and start tagging commits, everything is probably broken.
