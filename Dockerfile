@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     supervisor
 
+RUN apt-get clean
+
 EXPOSE 80
 
 # install conda
@@ -23,11 +25,11 @@ RUN rm ${CONDA_INSTALLER}
 
 # install python packages into root conda environment
 RUN conda update -y conda
-RUN conda install -y flask gunicorn boto3 ipython pandas
+RUN conda install -y flask gunicorn boto3 ipython scipy pandas
 
 # install xgboost
-RUN git clone --recursive https://github.com/dmlc/xgboost
-RUN cd xgboost; make -j4
+RUN git clone --recursive https://github.com/dmlc/xgboost /xgboost
+RUN cd /xgboost && ./build.sh && cd python-package && python setup.py install 
 
 # copy flask app
 COPY app /var/www/html
